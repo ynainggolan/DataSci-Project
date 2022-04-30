@@ -2,10 +2,12 @@
 """
 Name:  Yosua Nainggolan
 Email: Yosua.Nainggolan09@myhunter.cuny.edu
-URL :
+URL :https://ynainggolan.github.io/DataSci-Project/
 Title : Safety of NYC Based on Mortality Rates of Different Causes
 
-Resources:  
+Resources: https://data.cityofnewyork.us/Health/New-York-City-Leading-Causes-of-Death/jb7j-dtam
+           https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95
+           https://data.cityofnewyork.us/Housing-Development/Housing-Database-by-NTA/kyz5-72x5
 
 @author: yhpna
 
