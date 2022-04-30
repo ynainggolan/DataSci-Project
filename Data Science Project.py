@@ -6,11 +6,6 @@ URL :
 Title : Safety of NYC Based on Mortality Rates of Different Causes
 
 Resources:  
-            
-#Resources: https://data.cityofnewyork.us/Transportation/Open-Restaurant-Applications/pitm-atqc/data
-#URL: https://carlosgenis.github.io/FinalProject/
-#Title: An in-depth look into NYC open restaurant applications
-#carlos.genis34@myhunter.cuny.edu
 
 @author: yhpna
 
@@ -174,11 +169,11 @@ def main():
     other_ = other_.reset_index()
     disease_ = leading_cause.groupby('Year')['Disease'].sum()
     disease_ = disease_.reset_index()
+    
     # sod is the data frame that consist of the summary of self, others, and diseases number of death
     sod = self_.merge(other_, on = 'Year')
     sod = sod.merge(disease_, on = 'Year')
     sod = sod.merge(death_, on = 'Year')
-    #sod.to_csv('Self_Other_Disease.csv', index=False)
     
     '''
     #This section uses the data from the leading_cause that hasn't been group by year.
@@ -232,7 +227,6 @@ def main():
     plt.show()
    
 
-    '''
     # This sections will print out the relative death count graphs
     plt.bar(sod['Year'],sod['Deaths'])
     plt.title('Relative Death Count')
@@ -243,11 +237,10 @@ def main():
     plt.plot(sod['Year'],sod['Disease'], label = 'Diseases', color = 'black', marker = 'o')
     plt.legend(loc = 'upper right')
     plt.show()
-    '''
+    
     
     vehicle_data = import_vehicle_data('Motor_Vehicle_Collisions_-_Crashes.csv')
     vehicle_data = clean_vehicle_data(vehicle_data)
-    #vehicle_data.to_csv('Vehicle Data.csv', index=False)
     print(vehicle_data['COLLISION_ID'])
     
     #code for getting the car crashes to be mapped 
@@ -257,10 +250,9 @@ def main():
     housing_database = housing_database[ ["nta2010", "boro"]]
     housing_database['BOROUGH'] = housing_database['boro'].str.upper()
     housing_database = housing_database.drop(['boro'], axis = 1)
-    #print(housing_database)
-    #map_data = housing_database.merge(vehicle_crashes,left_on='boro', right_on='BOROUGH')
-    #map_data = vehicle_crashes.merge(housing_database,on='BOROUGH',how='outer')
-    #map_vehicle_crashes(map_data)
+    map_data = housing_database.merge(vehicle_crashes,left_on='boro', right_on='BOROUGH')
+    map_data = vehicle_crashes.merge(housing_database,on='BOROUGH',how='outer')
+    map_vehicle_crashes(map_data)
     
     collisions = vehicle_data.groupby('YEAR')['COLLISION_ID'].sum()
     collisions = collisions.reset_index()
@@ -272,9 +264,8 @@ def main():
     #CIK is data frame summary of collisions, killed, and injured
     cik = collisions.merge(killed, on = 'YEAR')
     cik = cik.merge(injured, on = 'YEAR')
-    #cik.to_csv('Collision_Injured_Killed.csv', index=False)
     print(cik)
-    """
+
     #this part uses data from cik (collisions_injured_killed) since the original data's collisons are all 1.
     b_car, m_car = compute_lin_reg(cik['COLLISION_ID'], cik['NUMBER OF PERSONS KILLED'])
     xes = np.array([0,cik['COLLISION_ID'].max()])
@@ -291,9 +282,9 @@ def main():
     plt.plot(xes,yes,color='r')
     plt.title(f'Regression line of INJURED with m = {m_car:{4}.{2}} and y-intercept = {b_car:{4}.{4}}')
     plt.show()
-    """
+
     
-    '''
+    
     plt.bar(cik['YEAR'],cik['COLLISION_ID'])
     plt.title('Killed vs. Injured on Collisions')
     plt.xlabel('Year')
@@ -310,7 +301,7 @@ def main():
     plt.plot(cik['YEAR'],cik['NUMBER OF PERSONS INJURED'], label = 'Injured', color = 'black', marker = 'o')
     plt.legend(loc = 'upper right')
     plt.show()
-    '''
+
 
     
 main()
