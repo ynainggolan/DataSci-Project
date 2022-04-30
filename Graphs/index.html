@@ -1,0 +1,132 @@
+<center><h1>Safety of NYC Based on Mortality Rates of Different Causes</h1></center>
+<center><h2>By Yosua Naiggolan</h2></center>
+<center><a href=https://github.com/ynainggolan/Data-Science-Project> Link to Github repo</a><br></center>
+<h2>Overview:</h2>
+    <p>
+        The objective of this project is to infer the safety of NYC.
+        By exploring the different causes of mortality, we should be able to infer the 
+        situation in NYC and the five borough. The question that I want to answer is 
+        whether or not NYC is a relatively safe place to live. Should the residents of 
+        NYC be more wary of other, or should they consult more with other due to depression
+        and stress, or should they be taking more percautions of to prevent themselves from 
+        getting sick.
+    </p>
+<h2>The Leading Causes:</h2>
+    <p>
+        By using the "New_York_City_Leading_Causes_Of_Death.csv" I am able to get
+        all of the leading causes of death that has been recorded since 2007 to 2019.
+        Using the same dataset it is also possible to categorize the causes into three
+        categories: Self, Others, and Diseases. The "Self" is when the causes of death is 
+        the person itself, whether it be done by self harming or overdosing. The "Others"
+        is when the cause of death is done by other people, whether it be homicide or 
+        accidents. Then the "Disease" is death caused by diseases whether it be cureable or 
+        non-curable. 
+        <img src="Leading Cause Of Death.png" alt="Leading Cause of Death" style="width:100%">
+        <head>
+            <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            .column {
+              float: left;
+              width: 33.33%;
+              padding: 5px;
+            }
+            
+            /* Clearfix (clear floats) */
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            </style>
+            </head>
+        <div class="row">
+            <div class="column">
+              <img src="Relative Death Count.png" alt="Relative Death Count" style="width:100%">
+            </div>
+            <div class="column">
+              <img src="Self vs. Others vs. Diseases.png" alt="Relative Death Count" style="width:100%">
+            </div>
+          </div>
+        In the image above we can see the frequency of cause of death being recorded throughout 2007 to 2019 (top).
+        It is clear that the most frequent cause of death in NYC is diseases. Not only is it more frequent 
+        but it also have more kinds of diseases that is being recorded. Whereas the self and other being the 
+        cause of death, both of them are relatively equal throughout 2007 to 2019. But, what is interesting is that 
+        the "Self" as a cause of death has increases whereas "Others" has decreased, as can be seen on the bottom graph.  
+        Although the change in trend is comparatively small in comparison to the overall death, it is still concerning
+        that more people is dying due to themselves since 2014 to 2020. We know that in 2020 drastic change
+        has been made due to the global pandemic that is happening, and it seems that NYC populace becomes more 
+        burdened by the change which resulted in the increase of death done by themselves. Also a possible decrease in death due 
+        to other in 2020 is the fact that there is a lock down, which prevent other from interacting with each other physically as much.
+    </p>
+    <p>
+      <div class="row">
+        <div class="column">
+          <img src="diseases regression line.png" alt="Relative Death Count" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="self regression line.png" alt="Relative Death Count" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="others regression line.png" alt="Relative Death Count" style="width:100%">
+        </div>
+      </div>
+      Then on this graphs we can see the predictions of the three different causes of death. These three graphs shows the most contributed
+      factor in the amount of death in NYC. As can bee see clearly it is Diseases, an the line on the graph suggested that it continue to 
+      be the most contributing cause. Meanwhile the other two graphs, "Self" and "Others", shows that they increasing ever so slightly
+      on the graph; although the regression line predicts that they will contribute less as the cause of death. But it is clear that 
+      disesases are reulilng in the cause of death in NYC.
+
+    </p>
+<h2>Car Crashes</h2>
+    <p>
+        Now that we have taken a look on the general cause of death in NYC let us analyze more on "Others" as the cause,
+        more specifically motor vehicle. Since car accidents are rampant throught the country and it is a cause where people can collectively 
+        prevent. 
+        <!-- <head>
+            <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            .column {
+              float: left;
+              width: 33.33%;
+              padding: 5px;
+            }
+            
+            /* Clearfix (clear floats) */
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            </style>
+            </head> -->
+        <div class="row">
+            <div class="column">
+              <img src="Killed vs. Injured on Collisions.png" alt="Killed vs. Injured On Collision" style="width:100%">
+            </div>
+            <div class="column">
+              <img src="Killed vs. Injured.png" alt="Killed vs. Injured" style="width:100%">
+            </div>
+          </div>
+        As the graph above shows there are a significant amount of car crashses in NYC and yet not many casualties. This shows that 
+        although car crashes are rampant, the casualties it causes aren't that significant. However, although it is not significant
+        the casualties of car crashes are fairly consistent. As can be seen on the graph to the left, there are a significant drop 
+        in car crashes between 2019 to 2021 and yet the casualties it produces are consistent. Which can be infered that the
+        global pandemic has reduced many of the small crashes but it doesn't help in preventing the big crashes.  
+    </p>
+    <p>
+      <div class="row">
+        <div class="column">
+          <img src="INJURED.png" alt="Killed vs. Injured On Collision" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="KILLED.png" alt="Killed vs. Injured" style="width:100%">
+        </div>
+      </div>
+      pupupupupupupupupupupupupupupupupupupupupuppupupuuppppuuuuupupuupppuuuupupupupu
+    </p>
